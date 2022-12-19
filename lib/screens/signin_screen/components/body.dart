@@ -48,7 +48,7 @@ class Body extends StatelessWidget {
               () => Visibility(
                 visible: homeSignInController.error.value?.isNotEmpty == true,
                 child: Text(
-                  homeSignInController.error.value != null ? 'Debe selección un método de autenticación' : '',
+                  homeSignInController.error.value != null ? '' : '',
                   style: const TextStyle(color: Colors.red, fontSize: 14.0),
                 ),
               ),
