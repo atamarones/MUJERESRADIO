@@ -10,7 +10,7 @@ class BuildListVideo extends StatelessWidget {
       "id": index,
       "title": "Programa #$index",
       "subtitle": "Publicado $index semana",
-      "url": "Publicado $index semana"
+      "url": "https://www.youtube.com/watch?v=0QjDtEoxXjE"
     };
   });
 
