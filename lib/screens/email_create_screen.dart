@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prueba_auth/controllers/email_create_controller.dart';
 
+import '../constants.dart';
+
 class EmailCreate extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
 
@@ -11,7 +13,10 @@ class EmailCreate extends StatelessWidget {
   Widget build(BuildContext context) {
     final emailController = Get.put(EmailCreateController());
     return Scaffold(
-      appBar: AppBar(title: const Text('Create account')),
+      appBar: AppBar(
+          title: const Text('Create account'),
+          backgroundColor: kPrimaryColor,
+      ),
       body: Form(
         key: _formKey,
         child: Padding(
@@ -27,7 +32,7 @@ class EmailCreate extends StatelessWidget {
                 visible: emailController.error.value?.isNotEmpty == true,
                 child: Text(
                   emailController.error.value ?? '',
-                  style: const TextStyle(color: Colors.red, fontSize: 24),
+                  style: const TextStyle(color: Colors.red, fontSize: 20),
                 ))),
             const SizedBox(
               height: 8,
@@ -42,7 +47,7 @@ class EmailCreate extends StatelessWidget {
             ),
             TextFormField(
               controller: emailController.passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: const InputDecoration(labelText: 'Contraseña'),
               validator: emailController.passwordValidator,
             ),
             const SizedBox(
@@ -50,7 +55,7 @@ class EmailCreate extends StatelessWidget {
             ),
             TextFormField(
               controller: emailController.repeatPasswordController,
-              decoration: const InputDecoration(labelText: 'Repeat Password'),
+              decoration: const InputDecoration(labelText: 'Repetir Contraseña'),
               validator: emailController.passwordValidator,
             ),
             Center(

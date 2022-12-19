@@ -4,32 +4,49 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import '../../../constants.dart';
+import 'list_view_video.dart';
 
 class Body extends StatelessWidget {
-  final double coverHeight = 200;
-  final double profileHeight = 100;
+  final double coverHeight = 220;
+  final double profileHeight = 85;
 
   const Body({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          extendBodyBehindAppBar: true,
-          body: Column(
-            //padding: EdgeInsets.zero,
-            children: <Widget>[
-              _buidTop(),
-              _buildContent(),
-              //ybuildListVideo(),
-            ],
-          )),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: kPrimaryColor,
+          toolbarHeight: 40.0,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          title: const Text(''),
+          centerTitle: true,
+          flexibleSpace: Container(
+            height: 70.0,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: <Color>[Colors.black87, kPrimaryColor]),
+            ),
+          ),
+        ),
+        body: Column(
+          //padding: EdgeInsets.zero,
+          children: <Widget>[
+            _buidTop(),
+            _buildContent(),
+            BuildListVideo(),
+          ],
+        ));
   }
 
   Widget _buidTop() {
     final double bottom = profileHeight / 2;
-    final double top = coverHeight - profileHeight / 2;
+    final double top = coverHeight - (profileHeight / 2);
     return Stack(
       clipBehavior: Clip.none,
       alignment: Alignment.center,
@@ -46,7 +63,7 @@ class Body extends StatelessWidget {
 
   Widget _buidCoverImage() {
     return Container(
-        color: Colors.green,
+        color: Colors.white,
         width: double.infinity,
         height: coverHeight,
         child: CachedNetworkImage(
@@ -59,16 +76,16 @@ class Body extends StatelessWidget {
     return CircleAvatar(
         radius: profileHeight / 2,
         backgroundColor: Colors.grey.shade800,
-        backgroundImage: AssetImage("assets/images/mujeres-radio-logo.png"));
+        backgroundImage: const AssetImage("assets/images/mujeres-radio-logo.png"));
   }
 
   Widget _buildContent() => Column(
         children: [
-          const SizedBox(height: 8),
-          Text(Get.arguments['nameLocutora'], style: kTitleBlackStyle),
+      //    const SizedBox(height: 8),
+      //    Text(Get.arguments['nameLocutora'], style: kTitleBlackStyle),
           const SizedBox(height: 5),
-          Text(Get.arguments['namePrograma'], style: kTextBlackStyle),
-          const SizedBox(height: 15),
+      //    Text(Get.arguments['namePrograma'], style: kTextBlackStyle),
+      //    const SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -83,12 +100,11 @@ class Body extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           const Divider(),
-          const SizedBox(height: 16),
         ],
       );
 
   Widget _buidSocialIcon(IconData icon) => CircleAvatar(
-        radius: 25,
+        radius: 20,
         child: Material(
           shape: const CircleBorder(),
           clipBehavior: Clip.hardEdge,

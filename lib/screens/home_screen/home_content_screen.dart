@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../components/staggered_grid_view.dart';
 import '../../components/static_image.dart';
-import '../../constants.dart';
 import 'components/carousel_card.dart';
 
 class MyHomeContent extends StatefulWidget {
