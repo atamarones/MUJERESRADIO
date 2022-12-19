@@ -4,6 +4,7 @@ import 'package:prueba_auth/controllers/home_signin_controller.dart';
 import 'package:prueba_auth/screens/signin_screen/components/sign_form.dart';
 import 'package:prueba_auth/components/size_config.dart';
 
+import '../../../constants.dart';
 import '../../../navigation/routes.dart';
 
 class Body extends StatelessWidget {
@@ -19,7 +20,7 @@ class Body extends StatelessWidget {
           children: <Widget>[
             const Spacer(),
             Image.asset(
-              'assets/images/logo_final.png',
+              logoMorado,
               height: getProportionateScreenHeight(150),
               width: getProportionateScreenWidth(150),
             ),
@@ -47,8 +48,8 @@ class Body extends StatelessWidget {
               () => Visibility(
                 visible: homeSignInController.error.value?.isNotEmpty == true,
                 child: Text(
-                  homeSignInController.error.value ?? '',
-                  style: const TextStyle(color: Colors.red, fontSize: 24.0),
+                  homeSignInController.error.value != null ? 'Debe selección un método de autenticación' : '',
+                  style: const TextStyle(color: Colors.red, fontSize: 20.0),
                 ),
               ),
             ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prueba_auth/controllers/email_signin_controller.dart';
 
+import '../constants.dart';
+
 class EmailSignIn extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
 
@@ -11,7 +13,8 @@ class EmailSignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     final emailController = Get.put(EmailSignInController());
     return Scaffold(
-      appBar: AppBar(title: const Text('Login with Email')),
+      appBar: AppBar(title: const Text('Login with Email'),
+      backgroundColor: kPrimaryColor,),
       body: Form(
         key: _formKey,
         child: Padding(
@@ -27,7 +30,7 @@ class EmailSignIn extends StatelessWidget {
                 visible: emailController.error.value?.isNotEmpty == true,
                 child: Text(
                   emailController.error.value ?? '',
-                  style: const TextStyle(color: Colors.red, fontSize: 24),
+                  style: const TextStyle(color: Colors.red, fontSize: 20),
                 ))),
             const SizedBox(
               height: 8,
