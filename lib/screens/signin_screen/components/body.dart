@@ -49,7 +49,7 @@ class Body extends StatelessWidget {
                 visible: homeSignInController.error.value?.isNotEmpty == true,
                 child: Text(
                   homeSignInController.error.value != null ? 'Debe selección un método de autenticación' : '',
-                  style: const TextStyle(color: Colors.red, fontSize: 20.0),
+                  style: const TextStyle(color: Colors.red, fontSize: 14.0),
                 ),
               ),
             ),

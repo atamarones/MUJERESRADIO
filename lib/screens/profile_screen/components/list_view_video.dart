@@ -34,7 +34,7 @@ class BuildListVideo extends StatelessWidget {
           ),
           title: Text(dummyList[index]["title"]),
           subtitle: Text(dummyList[index]["subtitle"]),
-          trailing: const Icon(Icons.favorite, color: Colors.red,),
+          //trailing: const Icon(Icons.favorite, color: Colors.red,),
         ),
       ),
     )));

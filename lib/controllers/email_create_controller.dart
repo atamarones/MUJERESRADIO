@@ -13,10 +13,7 @@ class EmailCreateController extends GetxController {
   final isLoading = RxBool(false);
 
   String? emailValidator(String? value) {
-    //return (value == null || value.isEmpty) ? 'This is a required field' : null;
-    bool emailValid = RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$').hasMatch(value!);
-    return (emailValid) ? 'Ingrese un email válido.' : null;
-
+    return (value == null || value.isEmpty) ? 'This is a required field' : null;
   }
 
   String? passwordValidator(String? value) {
