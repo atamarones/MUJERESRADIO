@@ -4,14 +4,14 @@ import 'package:prueba_auth/screens/email_create_screen.dart';
 import 'package:prueba_auth/screens/email_signin_screen.dart';
 import 'package:prueba_auth/screens/intro_screen/intro_screen.dart';
 import 'package:prueba_auth/screens/profile_screen/profile_screen.dart';
-import 'package:prueba_auth/screens/splash_screen/splash_screen.dart';
+//import 'package:prueba_auth/screens/splash_screen/splash_screen.dart';
 
 import '../screens/home_screen/home_screen.dart';
 import '../screens/signin_screen/sign_in.dart';
 
 class Routes {
-  static const splash = '/';
-  static const intro = '/intro';
+ // static const splash = '/';
+  static const intro = '/';
   static const signIn = '/signin';
   static const createAccount = '/createAccount';
   static const signInEmail = '/signInEmail';
@@ -20,8 +20,8 @@ class Routes {
 
   static Route routes(RouteSettings settings) {
     switch (settings.name) {
-      case splash:
-        return _buildRoute(settings, page: const SplashScreen());
+    //  case splash:
+    //    return _buildRoute(settings, page: const SplashScreen());
       case intro:
         return _buildRoute(settings, page: const IntroScreen());
       case home:
