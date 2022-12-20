@@ -30,7 +30,7 @@ class EmailSignIn extends StatelessWidget {
                 visible: emailController.error.value?.isNotEmpty == true,
                 child: Text(
                   emailController.error.value ?? '',
-                  style: const TextStyle(color: Colors.red, fontSize: 20),
+                  style: const TextStyle(color: Colors.red, fontSize: 14),
                 ))),
             const SizedBox(
               height: 8,

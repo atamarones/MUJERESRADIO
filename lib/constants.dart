@@ -7,7 +7,7 @@ const kTextColor = Color(0xFFFFFFFF);
 const kBlueColor = Color(0xFF6E8AFA);
 const kBestSellerColor = Color(0xFFFFD073);
 const kGreenColor = Color(0xFF49CC96);
-const kBlackColor = Color(0x00000000);
+const kBlackColor = Colors.black;
 //Colors
 // ignore: constant_identifier_names
 const background_color = Color.fromRGBO(99, 45, 142, 1);
@@ -36,6 +36,13 @@ const kTextBlackStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontFamily: 'Muli',
 );
+const kTextNormal10BlackStyle = TextStyle(
+  fontSize: 10,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'Muli',
+  color: kBlackColor,
+);
+
 
 const kTitleBlackStyle = TextStyle(
   fontSize: 18,

@@ -39,6 +39,8 @@ class Body extends StatelessWidget {
           children: <Widget>[
             _buidTop(),
             _buildContent(),
+            const SizedBox(height: 8),
+            const Divider(),
             BuildListVideo(),
           ],
         ));
@@ -76,16 +78,17 @@ class Body extends StatelessWidget {
     return CircleAvatar(
         radius: profileHeight / 2,
         backgroundColor: Colors.grey.shade800,
-        backgroundImage: const AssetImage("assets/images/mujeres-radio-logo.png"));
+        backgroundImage:
+            const AssetImage("assets/images/mujeres-radio-logo.png"));
   }
 
   Widget _buildContent() => Column(
         children: [
-      //    const SizedBox(height: 8),
-      //    Text(Get.arguments['nameLocutora'], style: kTitleBlackStyle),
+          //    const SizedBox(height: 8),
+          //    Text(Get.arguments['nameLocutora'], style: kTitleBlackStyle),
           const SizedBox(height: 5),
-      //    Text(Get.arguments['namePrograma'], style: kTextBlackStyle),
-      //    const SizedBox(height: 15),
+          //    Text(Get.arguments['namePrograma'], style: kTextBlackStyle),
+          //    const SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -98,8 +101,6 @@ class Body extends StatelessWidget {
               _buidSocialIcon(FontAwesomeIcons.instagram)
             ],
           ),
-          const SizedBox(height: 16),
-          const Divider(),
         ],
       );
 
