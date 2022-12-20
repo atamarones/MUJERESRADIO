@@ -47,9 +47,9 @@ class Body extends StatelessWidget {
             Obx(
               () => Visibility(
                 visible: homeSignInController.error.value?.isNotEmpty == true,
-                child: Text(
-                  homeSignInController.error.value != null ? '' : '',
-                  style: const TextStyle(color: Colors.red, fontSize: 14.0),
+                child: Text(''
+                  //homeSignInController.error.value != null ? '' : '',
+                  //style: const TextStyle(color: Colors.red, fontSize: 14.0),
                 ),
               ),
             ),
